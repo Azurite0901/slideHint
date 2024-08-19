@@ -1,0 +1,36 @@
+@use "../global" as g;
+
+.c_slideHint {
+   position: absolute;
+   padding: 16px;
+   width: 40%;
+   min-width: 155px;
+   aspect-ratio: 16/9;
+   max-height: 150px;
+   background-color: #006af5a8;
+   top: 245px;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   display: grid;
+   place-items: center;
+   opacity: 0;
+   transition: var(--transition-default);
+   pointer-events: none;
+   border-radius: 5px;
+   @include g.mq() {
+      display: none;
+   }
+   &.hide_scrollHint {
+      opacity: 0 !important;
+      visibility: hidden;
+   }
+}
+
+.c_slideHint_img {
+   width: 50%;
+}
+
+.c_slideHint_text {
+   color: var(--color-white);
+}

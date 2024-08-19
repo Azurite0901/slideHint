@@ -1,0 +1,134 @@
+@use "../global" as g;
+
+.introduction_portfolio_thumbnail {
+   img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+   }
+   @include g.mq() {
+      max-width: 640px;
+      margin: 0 auto;
+   }
+}
+.introduction_portfolio_inner {
+   margin-top: 34px;
+}
+.introduction_portfolio_inner_inner {
+   @include g.mq() {
+      display: flex;
+      gap: 16px;
+      align-items: end;
+   }
+}
+.introduction_portfolio_title {
+   font-size: 20px;
+   @include g.mq() {
+      font-size: 24px;
+   }
+   line-height: 1;
+   font-weight: bold;
+   padding-bottom: 4px;
+   border-bottom: 1px solid var(--color-primary);
+   width: fit-content;
+}
+.introduction_portfolio_link {
+   color: var(--color-primary);
+   text-decoration: underline;
+   margin-top: 8px;
+   display: block;
+   line-height: 1.2;
+   transition: var(--transition-default);
+   @media (hover: hover) and (pointer: fine) {
+      &:hover {
+         color: var(--color-primary-hover);
+      }
+   }
+}
+.introduction_portfolio_desc {
+   margin-top: 8px;
+}
+// splide
+
+.my_class_page {
+   background-color: var(--color-primary);
+   width: 10px;
+   height: 10px;
+   border-radius: 100px;
+   transition: 0.5s all;
+   opacity: 0.3;
+   &.is-active {
+      background-color: var(--color-primary);
+      opacity: 1;
+   }
+}
+.my_class_pagination {
+   gap: 8px;
+   position: absolute;
+   top: calc((90vw * 9 / 16) + 4px);
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 3;
+   @include g.mq() {
+      top: calc((640px * 9 / 16) + 4px);
+   }
+}
+
+.splide__arrows {
+   display: none;
+   @include g.mq() {
+      display: block;
+   }
+}
+.splide__arrow {
+   position: absolute;
+   width: 30px;
+   height: 30px;
+   z-index: 4;
+   top: 180px;
+   transform: translateY(-50%);
+   &--prev {
+      left: 6px;
+      @include g.arrow;
+      position: absolute;
+      &::before {
+         transition: var(--transition-default);
+
+         cursor: pointer;
+         rotate: -135deg;
+         width: 30px;
+         height: 30px;
+         border-right: 2px solid var(--color-primary);
+         border-top: 2px solid var(--color-primary);
+      }
+      @media (hover: hover) and (pointer: fine) {
+         &:hover::before {
+            border-color: var(--color-primary-hover);
+         }
+      }
+   }
+   &--next {
+      right: 6px;
+      @include g.arrow;
+      position: absolute;
+      &::before {
+         transition: var(--transition-default);
+
+         cursor: pointer;
+         rotate: 45deg;
+         width: 30px;
+         height: 30px;
+         border-right: 2px solid var(--color-primary);
+         border-top: 2px solid var(--color-primary);
+      }
+      @media (hover: hover) and (pointer: fine) {
+         &:hover::before {
+            border-color: var(--color-primary-hover);
+         }
+      }
+   }
+}
+.text {
+   display: grid;
+   place-items: center;
+   height: 100vh;
+}

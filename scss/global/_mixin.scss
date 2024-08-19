@@ -1,0 +1,27 @@
+@mixin arrow(
+   $rotate: 0deg,
+   $color: #000,
+   $w: 6px,
+   $h: 6px,
+   $top: 0,
+   $right: 0,
+   $bottom: 0,
+   $left: 0
+) {
+   position: relative;
+
+   &::before {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: $top;
+      right: $right;
+      left: $left;
+      bottom: $bottom;
+      width: $w;
+      height: $h;
+      border-top: 1px solid $color;
+      border-right: 1px solid $color;
+      transform: rotate($rotate);
+   }
+}

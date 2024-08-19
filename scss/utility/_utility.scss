@@ -1,0 +1,33 @@
+@use "../global" as g;
+.u_visuallyHidden {
+   position: absolute !important;
+   white-space: nowrap !important;
+   width: 1px !important;
+   height: 1px !important;
+   overflow: hidden !important;
+   border: 0 !important;
+   padding: 0 !important;
+   clip: rect(0 0 0 0) !important;
+   clip-path: inset(50%) !important;
+   margin: -1px !important;
+}
+
+.u_ptb56-64 {
+   padding: 56px 0 !important;
+   @include g.mq() {
+      padding: 64px 0 !important;
+   }
+}
+.u_mt40-48 {
+   margin-top: 40px !important;
+   @include g.mq() {
+      margin-top: 48px !important;
+   }
+}
+
+.u_mt16-24 {
+   margin-top: 16px !important;
+   @include g.mq() {
+      margin-top: 24px !important;
+   }
+}

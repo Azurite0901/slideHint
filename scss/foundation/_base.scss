@@ -1,0 +1,16 @@
+@use "../global" as g;
+
+body {
+   line-height: 1.6;
+   font-size: 14px;
+   @include g.mq() {
+      font-size: 16px;
+   }
+   color: var(--font-base);
+   font-family: var(--font-family-jp);
+}
+img {
+   width: 100%;
+   height: auto;
+   display: block;
+}

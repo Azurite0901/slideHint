@@ -1,0 +1,15 @@
+@use "../global" as g;
+
+%container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.l_container_sm {
+   @extend %container;
+   max-width: var(--content-width-sm);
+}
+.l_container_md {
+   @extend %container;
+   max-width: var(--content-width-md);
+}
